@@ -1,0 +1,126 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "4000:4000"
+    restart: always
+    networks:
+      - app-network
+
+  mysql-db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:-root}
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-init/init-databases.sql:/docker-entrypoint-initdb.d/01-init-databases.sql
+      - ./sharp_ai/db/init.sql:/docker-entrypoint-initdb.d/02-init.sql
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5001"
+    restart: always
+    networks:
+      - app-network
+
+  cognitive-backend:
+    build: ./CognitiveStyleBackend
+    ports:
+      - "8003:8003"
+    restart: always
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_GATEWAY_URL=http://3.27.27.96:4000
+    ports:
+      - "80:80"
+    restart: always
+    networks:
+      - app-network
+
+  cognitive-style-ai:
+    build: ./cognitive_style_ai
+    ports:
+      - "8112:8112"
+    restart: always
+    networks:
+      - app-network
+
+  cognitive-load-api:
+    build: ./COGNITIVE-LOAD-API
+    ports:
+      - "8021:8021"
+    restart: always
+    networks:
+      - app-network
+
+  deepseek-service:
+    build: ./deepseek-service
+    ports:
+      - "5004:5004"
+    restart: always
+    networks:
+      - app-network
+
+  exam-service:
+    build: ./exam_service
+    ports:
+      - "8120:8120"
+    restart: always
+    networks:
+      - app-network
+
+  gpt-service:
+    build: ./gpt-service
+    ports:
+      - "5002:5002"
+    restart: always
+    networks:
+      - app-network
+
+  lime-ai:
+    build: ./lime_ai
+    ports:
+      - "8110:8110"
+    restart: always
+    networks:
+      - app-network
+
+  recommendation-ai:
+    build: ./recommendation_ai
+    ports:
+      - "5003:5003"
+    restart: always
+    networks:
+      - app-network
+
+  resource-upload:
+    build: ./Resource_upload
+    ports:
+      - "5000:5000"
+    restart: always
+    networks:
+      - app-network
+
+  sharp-ai:
+    build: ./sharp_ai
+    ports:
+      - "8111:8111"
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
