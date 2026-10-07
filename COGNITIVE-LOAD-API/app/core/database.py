@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 def get_db_config():
     # Keep the local DB setup simple for development, while still allowing env overrides later.
     return {
-        "host": os.getenv("MYSQL_HOST", "127.0.0.1"),
+        "host": os.getenv("MYSQL_HOST", "mysql-db"),
         "port": int(os.getenv("MYSQL_PORT", "3306")),
         "user": os.getenv("MYSQL_USER", "root"),
         "password": os.getenv("MYSQL_PASSWORD", ""),

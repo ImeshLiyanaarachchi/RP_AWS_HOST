@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     APP_VERSION: str = "0.1.0"
     API_PREFIX: str = "/api/v1"
 
-    DB_HOST: str = "localhost"
+    DB_HOST: str = "mysql-db"
     DB_PORT: int = 3306
     DB_USER: str = "root"
     DB_PASSWORD: str = ""
