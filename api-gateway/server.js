@@ -8,29 +8,29 @@ const PORT = process.env.PORT || 4000;
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 const FRONTEND_URLS = process.env.FRONTEND_URLS || "";
 const BACKEND_SERVICE_URL =
-  process.env.BACKEND_SERVICE_URL || "http://localhost:5001";
+  process.env.BACKEND_SERVICE_URL || "13.237.149.64:5001";
 const GPT_SERVICE_URL =
-  process.env.GPT_SERVICE_URL || "http://localhost:5002";
+  process.env.GPT_SERVICE_URL || "13.237.149.64:5002";
 const DEEPSEEK_SERVICE_URL =
-  process.env.DEEPSEEK_SERVICE_URL || "http://localhost:5004";
+  process.env.DEEPSEEK_SERVICE_URL || "13.237.149.64:5004";
 const RESOURCE_UPLOAD_URL =
-  process.env.RESOURCE_UPLOAD_URL || "http://localhost:5000";
+  process.env.RESOURCE_UPLOAD_URL || "13.237.149.64:5000";
 const GATEWAY_SHARED_SECRET =
   process.env.GATEWAY_SHARED_SECRET || "resource_gateway_secret_2026";
 const EXPLAINABLE_AI_BACKEND_URL =
-  process.env.EXPLAINABLE_AI_BACKEND_URL || "http://localhost:8000";
+  process.env.EXPLAINABLE_AI_BACKEND_URL || "13.237.149.64:8000";
 const LIME_AI_SERVICE_URL =
-  process.env.LIME_AI_SERVICE_URL || "http://localhost:8110";
+  process.env.LIME_AI_SERVICE_URL || "13.237.149.64:8110";
 const SHAP_AI_SERVICE_URL =
-  process.env.SHAP_AI_SERVICE_URL || "http://localhost:8111";
+  process.env.SHAP_AI_SERVICE_URL || "13.237.149.64:8111";
 const NEXT_LESSON_RECOMMENDATION_URL =
-  process.env.NEXT_LESSON_RECOMMENDATION_URL || "http://localhost:5003";
+  process.env.NEXT_LESSON_RECOMMENDATION_URL || "13.237.149.64:5003";
 const COGNITIVE_LOAD_SERVICE_URL =
-  process.env.COGNITIVE_LOAD_SERVICE_URL || "http://localhost:8021";
-const COGNITIVE_STYLE_SERVICE_URL = 
-  process.env.COGNITIVE_STYLE_SERVICE_URL || "http://localhost:8003";
+  process.env.COGNITIVE_LOAD_SERVICE_URL || "13.237.149.64:8021";
+const COGNITIVE_STYLE_SERVICE_URL =
+  process.env.COGNITIVE_STYLE_SERVICE_URL || "13.237.149.64:8003";
 const COGNITIVE_STYLE_AI_URL =
-  process.env.COGNITIVE_STYLE_AI_URL || "http://localhost:8112";
+  process.env.COGNITIVE_STYLE_AI_URL || "13.237.149.64:8112";
 
 const allowedOrigins = [
   FRONTEND_URL,
@@ -39,6 +39,7 @@ const allowedOrigins = [
   "http://localhost:5174",
   "http://127.0.0.1:5173",
   "http://127.0.0.1:5174",
+  "http://13.237.149.64",
 ];
 
 app.use(
