@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+
   api-gateway:
     build: ./api-gateway
     ports:
@@ -32,6 +33,8 @@ services:
 
   cognitive-backend:
     build: ./CognitiveStyleBackend
+    env_file:
+      - ./CognitiveStyleBackend/.env
     ports:
       - "8003:8003"
     restart: always
@@ -51,6 +54,8 @@ services:
 
   cognitive-style-ai:
     build: ./cognitive_style_ai
+    env_file:
+      - ./cognitive_style_ai/.env
     ports:
       - "8112:8112"
     restart: always
@@ -67,6 +72,8 @@ services:
 
   deepseek-service:
     build: ./deepseek-service
+    env_file:
+      - ./deepseek-service/.env
     ports:
       - "5004:5004"
     restart: always
@@ -75,6 +82,8 @@ services:
 
   exam-service:
     build: ./exam_service
+    env_file:
+      - ./exam_service/.env
     ports:
       - "8120:8120"
     restart: always
@@ -83,6 +92,8 @@ services:
 
   gpt-service:
     build: ./gpt-service
+    env_file:
+      - ./gpt-service/.env
     ports:
       - "5002:5002"
     restart: always
@@ -91,6 +102,8 @@ services:
 
   lime-ai:
     build: ./lime_ai
+    env_file:
+      - ./lime_ai/.env
     ports:
       - "8110:8110"
     restart: always
@@ -99,6 +112,8 @@ services:
 
   recommendation-ai:
     build: ./recommendation_ai
+    env_file:
+      - ./recommendation_ai/.env
     ports:
       - "5003:5003"
     restart: always
@@ -107,6 +122,8 @@ services:
 
   resource-upload:
     build: ./Resource_upload
+    env_file:
+      - ./Resource_upload/.env
     ports:
       - "5000:5000"
     restart: always
@@ -115,6 +132,8 @@ services:
 
   sharp-ai:
     build: ./sharp_ai
+    env_file:
+      - ./sharp_ai/.env
     ports:
       - "8111:8111"
     restart: always
@@ -123,4 +142,4 @@ services:
 
 networks:
   app-network:
-    driver: bridge
+    driver: bridge
