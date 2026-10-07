@@ -11,5 +11,5 @@ export function getGatewayBaseUrl() {
       .replace(/\/+$/, '')
       .replace(/\/api$/i, '');
   }
-  return 'http://localhost:4000';
+  return 'http://13.237.149.64';
 }
