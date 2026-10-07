@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     DB_HOST: str = "mysql-db"
     DB_PORT: int = 3306
     DB_USER: str = "root"
-    DB_PASSWORD: str = ""
+    DB_PASSWORD: str = "root"
     DB_NAME: str = "cognitive-style-explanations"
 
     MONGO_URL: str = "mongodb://localhost:27017"
