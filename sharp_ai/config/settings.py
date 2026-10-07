@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     DB_HOST: str = "mysql-db"
     DB_PORT: int = 3306
     DB_USER: str = "root"
-    DB_PASSWORD: str = ""
+    DB_PASSWORD: str = "root"
     DB_NAME: str = "lime-data"
 
     MODEL_API_URL: str = "http://127.0.0.1:8021"
